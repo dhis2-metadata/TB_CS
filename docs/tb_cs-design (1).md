@@ -232,7 +232,7 @@ The date of treatment episode initiation (event date) is important for the calcu
 The treatment episode outcome is recorded in the Treatment stage.
 If the outcome of the treatment episode is "Failed", the outcome failed is recorded. A new treatment episode event can theb be created within the same enrollment.
 
-> **Example**
+> **EXAMPLE**
 >
 > Treatment regimen needs to be changed based on test results.
 
