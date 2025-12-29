@@ -87,7 +87,7 @@ This document is intended for audiences responsible for implementing TB data sys
 
 When a client is enrolled in the TB case surveillance as a tracked entity instance (TEI), TEI attributes are recorded to form the case profile.
 
-![Enrollment stage](resources/images/tb_cs_032.png)
+![Enrollment stage](resources/images/tb_cs_045.png)
 
 **The enrollment date has been set up as a placeholder** allowing the users to utilize it according to the needs of implementation. It can be used as date of registration in DHIS2 or as date of first consultation, visit or investigation. When enrolling confirmed TB cases only, it is possible to keep using enrollment date as date of diagnosis. In this case, the Laboratory tracker should be isolated from the TB case surveillance module and set up as a separate program.
 
@@ -161,20 +161,13 @@ The registration stage provides an overview of the baseline information, the eve
 
 ![Baseline info](resources/images/tb_cs_035.png)
 
-The system will **automatically provide a warning message with the definition of the selected history of previous treatment**. The definitions have been set as per the WHO global guidelines and should be adapted to the local context.
-A question on whether the patient has ever received 2nd line treatment before will appear should “Relapse”, “Treatment after failure or LTFU”, or “Other previously treated” is selected as history.
-
-![Baseline info for 2-line treatment](resources/images/tb_cs_036.png)
-
-![Risk factors and HIV status](resources/images/tb_cs_037.png)
+![Risk factors and HIV status](resources/images/tb_cs_036.png)
 
 In case of confirmed seropositivity of the patient the system will prompt an expansion of the HIV information and will request the date of the last test and whether the patient is enrolled in an ART cohort. If the latest HIV test date is **older than 6 months** from the date of diagnosis, a warning message will prompt the clinician to schedule another HIV test for the patient.
 
 At this point, if the laboratory results are available, the clinician/data entry clerk should be able to report the diagnostic decision.
 
-![Diagnosis of a presumptive case](resources/images/tb_cs_038.png)
-
-![Diagnosis](resources/images/tb_cs_039.png)
+![Bacteriologically confirmed diagnosis](resources/images/tb_cs_037.png)
 
 Once **the case is notified**, the user needs to fill in the fields in the Diagnostic decision section.
 
@@ -184,22 +177,18 @@ A **notification is sent to the patient** if the “Notify the case?” checkbox
 
 If the test results are negative but the case is **diagnosed clinically**, the patient can be notified as “clinically diagnosed”.
 
-![Clinical diagnosis](resources/images/tb_cs_040.png)
+![Clinically confirrmed confirmed diagnosis](resources/images/tb_cs_038.png)
 
 If the laboratory **results are negative and no notification is necessary**, the user should tick “NO” in the “Do you want to notify the case?”. This was the case is excluded from analysis of TB cases. **An SMS is sent to the patient if the patient is not diagnosed**
-
-![The suspected case results as negative](resources/images/tb_cs_041.png)
 
 Whether the diagnosis is positive (laboratory- or clinically-derived) or negative, the tracker presents two key dates: date of diagnosis and date of notification. The former is the date when the patient was diagnosed, while the latter is teh date on which they received the notificatin of their status. Although the use of these dates might be subject to change depending on the implementation, it should be noted that the period boundary for the PIs counting notifications (e.g. All TB cases notified), is based on the fate of diagnosis as per WHO guidelines.
 The primary purpose behind the inclusion of the date of diagnosis and the date of notification within the system is to facilitate future analysis and potential applications. For instance, these timestamps can serve as valuable metrics for evaluating service quality and ascertaining the efficiency with which healthcare facilities promptly inform patients.
 
 Once a presumptive case is bacteriologically confirmed or clinically diagnosed, they should receive a **TB registration number**. This information is also highlighted as a **reminder in the Feedback** window on the top right corner of the data entry screen just above the enrollment information. The clinician/data entry clerk should therefore reopen the enrollment window and assign a TB registration number according to the national guidelines. Although the default configuration leaves this space blank and editable, implementers might want to consider if an automatic assignment of a number (or alphanumeric sequence) would be appropriate as per the local workflow.
 
-![TB registration number assignment for clinically and bacteriologically diagnosed cases](resources/images/tb_cs_042.png)
-
 The same info will also appear as an **error message** under the “Date of diagnosis” as a reminder to assign a Tb registration number to the newly identified case.
 
-![Error message for the TB registration number assignment for clinically and bacteriologically diagnosed cases](resources/images/tb_cs_043.png)
+![Error message for the TB registration number assignment for clinically and bacteriologically diagnosed cases](resources/images/tb_cs_039.png)
 
 If the case is diagnosed with a new episode of bacteriologically confirmed pulmonary TB, a section to record the number of people (excluding the index case) living in the same household will become available.
 
@@ -209,9 +198,11 @@ The treatment initiation section allows to record whether the case started on tr
 
 The denotification section allows to denotify a case that has already been notified without removing or deleting the information that has already been entered.
 
-#### Treatment
+![Households contacts, treatment initiation and denotification sections](resources/images/tb_cs_040.png)
 
-![Treatment](resources/images/tb_cs_043.png)
+#### Treatment episode
+
+![Treatment episode](resources/images/tb_cs_041.png)
 
 In this stage, the clinician/data entry clerk will report data related to the treatment episode including the outcome.
 
@@ -232,6 +223,8 @@ The date of treatment episode initiation (event date) is important for the calcu
 The treatment episode outcome is recorded in the Treatment stage.
 If the outcome of the treatment episode is "Failed", the outcome failed is recorded. A new treatment episode event can theb be created within the same enrollment.
 
+![Treatment episode outcome](resources/images/tb_cs_042.png)
+
 > **EXAMPLE**
 >
 > Treatment regimen needs to be changed based on test results.
@@ -248,7 +241,7 @@ Once any other outcome than "Failed" is entered, the enrollment should be closed
 
 #### Monitoring Laboratory Results
 
-The structure of the monitoring stage is **virtually identical to the diagnostic laboratory stage**. The main difference is the list of tests - the monitoring lab stage includes only the ones that are relevant for monitoring purposes. Please note that if the patient is flagged as DS (drug susceptible), only the microscopy test will automatically appear in the monitoring lab stage as per WHO guidelines. As aforementioned, should the patient be a DRTB case, the list of tests will also display the cultures in solid and liquid media.
+The structure of the monitoring stage is **virtually identical to the diagnostic laboratory stage**. The main difference is the list of tests - the monitoring lab stage includes only the ones that are relevant for monitoring purposes. Please note that if the patient is flagged as drug-susceptible, only the microscopy test will automatically appear in the monitoring lab stage as per WHO guidelines. As aforementioned, should the patient be a drug-resistant TB case, the list of tests will also display cultures tests.
 
 ## Additional Features
 
@@ -266,13 +259,13 @@ The indicator widget contains a summary of key case data: 1) Date of diagnosis, 
 
 The variables that are displayed on the Indicator Widget can be customised with help of program rules
 
-![Indicator Widget](resources/images/tb_cs_015.png)
+![Indicator Widget](resources/images/tb_cs_043.png)
 
 ### Feedback Widget
 
 Feedback Widget is configurable and is not mandatory. It is used to display important messages and notes to the user entering the data.
 
-![Feedback Widget](resources/images/tb_cs_016.png)
+![Feedback Widget](resources/images/tb_cs_044.png)
 
 ## Analytics
 
