@@ -202,13 +202,13 @@ The denotification section allows to denotify a case that has already been notif
 
 #### Treatment episode
 
-![Treatment episode](resources/images/tb_cs_041.png)
-
 In this stage, the clinician/data entry clerk will report data related to the treatment episode including the outcome.
 
 The resistance classification is reported manually. It is possible to set up automated assignation of resistance classification based on the diagnostic test results using program rules.
 
 Resistance and susceptibility summary is also reported manually. It can be automated using program rules.
+
+![Treatment episode](resources/images/tb_cs_041.png)
 
 > **NOTE**
 >
