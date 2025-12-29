@@ -30,7 +30,6 @@ The TB-CS tracker program has been designed to reflect a **more generic workflow
 >
 > Please note that given the generic design of the tracker, this system design guide contains useful information, considerations, and justifications that can be of great importance for the implementation. The document should therefore be thoroughly revised both by the requesting and implementing parties.
 
-
 ![Theoretical workflow](resources/images/tb_cs_001.png)
 
 Following this initial workflow, the program has been structured as follows:
