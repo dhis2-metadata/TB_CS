@@ -222,11 +222,11 @@ Configuration of automated aggregate data exchanges requires the following steps
     Predictors will be used to reset data values in the aggregate data sets before running an aggregate data exchange for a specific period. An example of a predictor can be found below:
    
    ```json
-   "code": "YOUR_DESIRED_CODE",
+   "code": "CODE",
    "name": "Name",
    "shortName": "Short Name",
    "output": {
-     "id": "{Any data element UID can be used here. It will only serve as a placeholder. No data will be posted to this data element}"
+     "id": "[Any data element UID can be used here. It will only serve as a placeholder. No data will be posted to this data element]"
    },
    "generator": {
     "expression": "forEach ?de in :DEG:D2spytmv9am --> if((isNull(#{?de})),#{?de},0)",
@@ -234,10 +234,10 @@ Configuration of automated aggregate data exchanges requires the following steps
     "slidingWindow": false,
     "missingValueStrategy": "NEVER_SKIP",
    },
-   "periodType": "[data set period]",
+   "periodType": "[Data set period]",
    "organisationUnitLevels": [
     {
-      "id": "[Organisation Unit level uid]"
+      "id": "[Organisation unit level uid]"
     }
    ],
    "organisationUnitDescendants": "SELECTED",
