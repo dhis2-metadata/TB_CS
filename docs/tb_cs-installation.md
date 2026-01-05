@@ -206,6 +206,54 @@ The TB case-based surveillance tracker captures data that can be fed into standa
 
 The **program indicators** in the TB Case Surveillance and Laboratory package are mapped with **data elements** and **category option combinations** in the DHIS2 TB aggregate package (Notifications, Outcomes, Laboratory).
 
+
+Configuration of automated aggregate data exchanges reuires the following steps:
+
+1. Review program indicators
+    Make sure that the program indicators required for the aggregate data exchange are configured properly and reference correct data elements and category option combinations
+
+2. Review aggregate data exchanges
+   Make sure the aggregate data exchanges are configured properly, the period for data aggregation matches the required period, and correct program indicators are referenced in the request.
+   
+3. Review required data element groups
+   Make sure the data elements used in the data set are added to a corresponding data element group. Take a note of the data element group uid. We will use ```D2spytmv9am``` as an example.
+   
+4. Configure predictors for each data element group.
+    Predictors will be used to reset data values in the aggregate data sets before running an aggregate data exchange for a specific period. An example of a predictor can be found below:
+   
+   ```json
+   "code": "YOUR_DESIRED_CODE",
+   "name": "Name",
+   "shortName": "Short Name",
+   "output": {
+     "id": "[Any data element UID can be used here. It will only serve as a placeholder. No data will be posted to this data element]"
+   },
+   "generator": {
+    "expression": "forEach ?de in :DEG:D2spytmv9am --> if((isNull(#{?de})),#{?de},0)",
+    "description": "Description",
+    "slidingWindow": false,
+    "missingValueStrategy": "NEVER_SKIP",
+   },
+   "periodType": "[data set period]",
+   "organisationUnitLevels": [
+    {
+      "id": "[Organisation Unit level uid]"
+    }
+   ],
+   "organisationUnitDescendants": "SELECTED",
+   "sequentialSampleCount": 0,
+   "annualSampleCount": 0
+   ```
+   
+5. Configure scheduled jobs/job queues to run aggregate data exchanges.
+    The order of scheduled jobs has to be configured as listed below:
+    
+    1. Run "Predictor" job/s for the required period.
+    2. Run "Analytics table" job/s
+    3. Run "Exchange aggregate data" job/s
+    4. Run "Analytics table" job/s
+    
+
 ## Adapting the tracker program
 
 Once the programme has been imported, you might want to make certain modifications to the programme. Examples of local adaptations that *could* be made include:
