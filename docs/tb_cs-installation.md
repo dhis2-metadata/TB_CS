@@ -207,7 +207,7 @@ The TB case-based surveillance tracker captures data that can be fed into standa
 The **program indicators** in the TB Case Surveillance and Laboratory package are mapped with **data elements** and **category option combinations** in the DHIS2 TB aggregate package (Notifications, Outcomes, Laboratory).
 
 
-Configuration of automated aggregate data exchanges reuires the following steps:
+Configuration of automated aggregate data exchanges requires the following steps:
 
 1. Review program indicators
     Make sure that the program indicators required for the aggregate data exchange are configured properly and reference correct data elements and category option combinations
