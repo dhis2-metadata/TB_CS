@@ -226,7 +226,7 @@ Configuration of automated aggregate data exchanges requires the following steps
    "name": "Name",
    "shortName": "Short Name",
    "output": {
-     "id": "[Any data element UID can be used here. It will only serve as a placeholder. No data will be posted to this data element]"
+     "id": "{Any data element UID can be used here. It will only serve as a placeholder. No data will be posted to this data element}"
    },
    "generator": {
     "expression": "forEach ?de in :DEG:D2spytmv9am --> if((isNull(#{?de})),#{?de},0)",
