@@ -277,7 +277,7 @@ The full list of program indicators and indicators is available in the [metadata
 
 The TB-CS tracker captures data that can be fed into standard, aggregate reporting (i.e. monthly, quarterly, yearly or as determined by the country). An aggregate TB system design in DHIS2 can be accessed at who.dhis2.org/documentation/#tb.
 
-The package includes groups of program indicators that are mapped to the corresponding data elements and category option combinations of the data sets in the aggregate TB HMIS package.
+The package includes program indicators that are grouped and mapped to the corresponding data elements and category option combinations of the data sets in the aggregate TB HMIS package.
 
 The current TB-CS tracker supports data transfer for the following data sets:
 
@@ -287,7 +287,20 @@ The current TB-CS tracker supports data transfer for the following data sets:
 - TB - Outcomes (Yearly)
 - TB - Laboratory (Monthly)
 
-The mapping is based on codes of metadata objects. The aggregate data exchanged are included in the package.
+The mapping is based on codes of metadata objects. The aggregate data exchanges have been are pre-configured and are included in the package.
+
+### Aggregate Data Exchange
+
+Aggregate data exchange allows periodic aggregation of case-based data and automatic transfer of aggregated data to the aggregate data sets in DHIS2. Such data exchange can be configured both within one DHIS2 instance and in two independent instances.
+
+Aggregate data exchange can be run manually via the Aggregate Data Exchange App or automatically by using scheduled jobs or job queues in the Scheduler App.
+More information on the configuration of scheduled jobs and job queues is available on the [DHIS2 documentation website](https://docs.dhis2.org).
+
+When using aggregate data exchanges, it is important to consider scenarios, when the aggregate data exchange for a particular data set needs to be run several times for the same period. This may happen, when the user needs to edit data in the tracker program or when when data is still being entered into the tracker program for a specific period and the user wants to see the progress in the aggregate data set. An additional configuration is required to ensure data quality after each run of the aggregate data exchange. 
+
+> **IMPORTANT**
+>
+> If a previously generated data value shows a positive number and the new data value is a 0, the aggregate data exchange will not overwrite an existing data value. For this purpose, the data in the aggregate data set for the specific period of time needs to be reset each time before a new value is posted. This can be achieved with help of predictors. An example of predictor configuration is available in the installation guide.
 
 ### Program Rules
 
@@ -311,6 +324,6 @@ The following user groups are included in the TB Case Surveillance Tracker Packa
 
 - TB Admin: can edit/view metadata; no access to data [all program stages]
 - TB Data capture: can view metadata, can capture data [all program stages], no access to dashboards
-- TB Access: cam view metadata, can view data [all program stages]
-- TB lab access: cam view metadata, can view data [? program stages], access to laboratory dashboards
-- TB lab data capture: can view metadata, can capture data [TB registration and Laboratory stages]
+- TB Access: cam view metadata, can view data [all program stages], access to dashboards
+- TB lab access: cam view metadata, can view data [TB registration and Laboratory stages], access to laboratory dashboards
+- TB lab data capture: can view metadata, can capture data [TB registration and Laboratory stages], no access to dashboards
