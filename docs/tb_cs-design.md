@@ -112,7 +112,7 @@ The stage includes the following tests:
 - Xpert MTB/RIF Ultra;
 - Truenat;
 - Culture;
-- Phenotypic DST
+- Phenotypic DST;
 - First-line LPA;
 - Second-line LPA
 
