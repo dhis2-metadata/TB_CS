@@ -300,7 +300,7 @@ When using aggregate data exchanges, it is important to consider scenarios, when
 
 > **IMPORTANT**
 >
-> If a previously generated data value shows a positive number and the new data value is a 0, the aggregate data exchange will not overwrite an existing data value. For this purpose, the data in the aggregate data set for the specific period of time needs to be reset each time before a new value is posted. This can be achieved with help of predictors. An example of predictor configuration is available in the installation guide.
+> If a previously generated data value shows a positive number and the new data value is a 0, the aggregate data exchange will not overwrite an existing data value. For this purpose, the data in the aggregate data set for the specific period of time needs to be reset each time before a new value is posted. This can be achieved with help of predictors. An example of predictor configuration is available in the [installation guide](#tb-cs-installation).
 
 ### Program Rules
 
