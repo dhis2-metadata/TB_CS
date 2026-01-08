@@ -1,5 +1,15 @@
 # Release Note { #tb-cs-release-note }
 
+## 3.0.0
+
+A new independent release of the updated TB Case Surveillance Tracker package with new content. This release is based on the [WHO Consolidated guidance on tuberculosis data generation and use](https://www.who.int/publications/i/item/9789240075290) from 2024.
+
+This version is not compatible with previous versions of the TB Case Surveillance Tracker packages and can be imported in an instance with an existing TB Case Surveillance tracker.
+
+### Linkage with TB HMIS package
+
+TB Case Surveillance tracker is closely linked with the newest TB HMIS package. It contains program indicators and aggregate data exchanges that allow automatic aggregation of case-based data and its import into the aggregate data sets. More information can be found in the design and installation guides.
+
 ## 2.1.0
 
 A new version of the TB Case Surveillance Tracker package (2.1.0) has been released with new content, configuration fixes and improvements.
